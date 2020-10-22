@@ -1,1 +1,1 @@
-# R_I_R
+# Redundant Image Remover
