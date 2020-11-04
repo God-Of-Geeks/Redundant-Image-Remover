@@ -1,24 +1,26 @@
 import tkinter as tk
 from tkinter import *
 from tkinter import filedialog
+import os
+import classifier
 
 def browse_folder():
     global search_path
-    filename = filedialog.askdirectory()
-    search_path.set(filename)
-    print(filename)
-
+    browsefolder = filedialog.askdirectory()
+    search_path.set(browsefolder)
+    print(browsefolder)
 
 def save_folder():
     global save_path
-    filename = filedialog.askdirectory()
-    save_path.set(filename)
-    print(filename)
+    savefolder = filedialog.askdirectory()
+    save_path.set(savefolder)
+    print(savefolder)
 
 box = tk.Tk()
-box.geometry("400x550")
+box.geometry("400x150")
 search_path = StringVar()
 save_path = StringVar()
+box.title("Redundant Image Remover")
 
 lbl = Label(master=box,textvariable=search_path)
 lbl.grid(row=0, column=1)
@@ -33,4 +35,6 @@ button.place(x=300,y=0)
 button1 = Button(text="save in", command = save_folder)
 button1.place(x=300,y=50)
 
+button2 = Button(text="Go")
+button2.place(x=175,y=100)
 mainloop()
